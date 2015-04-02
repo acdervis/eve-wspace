@@ -122,6 +122,7 @@ $(document).ready(function () {
     } else {
         $('#btnPilotList').text("Pilot List: OFF");
     }
+    RefreshMap();
 });
 
 
@@ -155,6 +156,7 @@ function processAjax(data) {
 }
 
 function doMapAjaxCheckin() {
+    if(!loadtime) return;
     var currentPath = "update/";
     $.ajax({
         type: "POST",
